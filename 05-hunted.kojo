@@ -1,21 +1,5 @@
 // #exec
-
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration
-import com.badlogic.gdx.graphics.Color
-import com.badlogic.gdx.scenes.scene2d.actions.Actions
-import com.badlogic.gdx.scenes.scene2d.ui.Label
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton
-import com.badlogic.gdx.scenes.scene2d.InputEvent
-import com.badlogic.gdx.scenes.scene2d.InputEvent.Type
-import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.utils.Timer
-import com.badlogic.gdx.Gdx
-import com.badlogic.gdx.Input.Keys
-import com.badlogic.gdx.math.Vector2
-import net.kogics.kojo.gaming._
-import net.kogics.kojo.gaming.lwjgl3.StartupHelper
-import KojoUtils._
+// #include /gaming.kojo
 
 object Launcher {
     def main(args: Array[String]): Unit = {

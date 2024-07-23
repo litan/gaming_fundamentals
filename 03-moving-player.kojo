@@ -1,9 +1,6 @@
 // #exec
 // #include /gaming.kojo
 
-import com.badlogic.gdx.math.Vector2
-import KojoUtils._
-
 object Launcher {
     def main(args: Array[String]): Unit = {
         if (StartupHelper.startNewJvmIfRequired()) return ; // This handles macOS support and helps on Windows.
