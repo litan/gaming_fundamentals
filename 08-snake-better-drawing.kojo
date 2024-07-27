@@ -157,7 +157,7 @@ class Snake(initialCell: GridCell) extends GameEntity(-1, -1) {
         }
     }
 
-    val textureRegion = TextureUtils.loadTexture("blue-sq.png")
+    val textureRegion = TextureUtils.loadTexture("blue-sq-smooth.png")
 
     override def draw(dc: DrawingContext, parentAlpha: Float) {
         case class Point(x: Float, y: Float)
