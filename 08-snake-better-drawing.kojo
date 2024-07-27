@@ -191,8 +191,8 @@ class Snake(initialCell: GridCell) extends GameEntity(-1, -1) {
     }
 
     def selfIntersects: Boolean = {
-        val ret = cells.tail.contains(cells.head)
-        ret
+        val h = cells.head
+        cells.tail.find(cell => cell.x == h.x && cell.y == h.y).isDefined
     }
 }
 
