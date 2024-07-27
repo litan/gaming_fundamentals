@@ -1,5 +1,7 @@
 cleari()
 originBottomLeft()
+setBackground(black)
+
 val cb = canvasBounds
 
 case class Rectangle(x: Double, y: Double, width: Double, height: Double) {

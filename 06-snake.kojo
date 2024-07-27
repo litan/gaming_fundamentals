@@ -26,7 +26,7 @@ object Launcher {
 
     def defaultConfig = {
         val configuration = new Lwjgl3ApplicationConfiguration()
-        configuration.setTitle("Moving Character")
+        configuration.setTitle("Snake Game")
         configuration.useVsync(true)
         configuration.setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate)
         configuration.setWindowedMode(spriteSize * ncells, spriteSize * ncells)
