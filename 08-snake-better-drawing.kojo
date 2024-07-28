@@ -158,6 +158,7 @@ class Snake(initialCell: GridCell) extends GameEntity(-1, -1) {
     }
 
     val textureRegion = TextureUtils.loadTexture("blue-sq-smooth.png")
+    val headTextureRegion = TextureUtils.loadTexture("blue-pentagon.png")
 
     override def draw(dc: DrawingContext, parentAlpha: Float) {
         case class Point(x: Float, y: Float)
@@ -169,9 +170,25 @@ class Snake(initialCell: GridCell) extends GameEntity(-1, -1) {
             case Still => Point(cell.x * spriteSize, cell.y * spriteSize)
         }
 
-        for (cell <- cells) {
+        var idx = 0
+        while (idx < cells.length) {
+            val cell = cells(idx)
             val cxy = cellxy(cell)
-            dc.draw(textureRegion, cxy.x, cxy.y)
+            if (idx == 0) {
+                val rot = cell.d match {
+                    case Left  => 180
+                    case Right => 0
+                    case Up    => 90
+                    case Down  => 270
+                    case Still => 0
+                }
+                val s = spriteSize
+                dc.draw(headTextureRegion, cxy.x, cxy.y, s / 2, s / 2, s, s, 1, 1, rot)
+            }
+            else {
+                dc.draw(textureRegion, cxy.x, cxy.y)
+            }
+            idx += 1
         }
     }
 
