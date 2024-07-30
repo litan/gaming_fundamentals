@@ -161,14 +161,14 @@ class SpaceShip(x: Float, y: Float) extends GameEntity(x, y) {
     def update(dt: Float): Unit = {
         if (active) {
             if (Gdx.input.isKeyPressed(Keys.UP) || Gdx.input.isTouched) {
-                physics.addAcceleration(300, 90)
+                physics.applyAccelerationMagDir(300, 90)
                 thruster.setVisible(true)
             }
             else {
                 thruster.setVisible(false)
             }
 
-            physics.addGravityAcceleration(100)
+            physics.applyGravityAcceleration(100)
             physics.timeStep(dt)
         }
         else {

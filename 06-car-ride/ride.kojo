@@ -123,24 +123,22 @@ class PlayerCar(x0: Float, y0: Float) extends GameEntity(x0, y0) {
 
     val wb = new WorldBoundsCapability(this)
     val collider = new Collider(this)
-    val speed = 3800
+    val accel = 3000
 
     def update(dt: Float) {
-        val nv = physics.velocity
-        nv.scl(0.9f)
-        physics.setVelocity(nv.x, nv.y)
+        physics.scaleVelocity(0.9f)
 
         if (isKeyPressed(Keys.UP)) {
-            physics.addVelocity(vec(0, speed * dt))
+            physics.applyAcceleration(0, accel)
         }
         if (isKeyPressed(Keys.DOWN)) {
-            physics.addVelocity(vec(0, -speed * dt))
+            physics.applyAcceleration(0, -accel)
         }
         if (isKeyPressed(Keys.LEFT)) {
-            physics.addVelocity(vec(-speed * dt, 0))
+            physics.applyAcceleration(-accel, 0)
         }
         if (isKeyPressed(Keys.RIGHT)) {
-            physics.addVelocity(vec(speed * dt, 0))
+            physics.applyAcceleration(accel, 0)
         }
         physics.timeStep(dt)
         wb.wrapAround()
