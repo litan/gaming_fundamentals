@@ -77,8 +77,8 @@ class GameScreen(game: GdxGame) extends GdxScreen {
         pause()
         Timer.schedule(
             () => {
-                resume()
                 game.setScreen(new MessageScreen(game, msg, color))
+                resume()
             },
             1f
         )
